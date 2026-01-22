@@ -4,6 +4,10 @@
 
 ## Manual Usage (Windows – Drag & Drop)
 
+
+https://github.com/user-attachments/assets/72a80fe5-a9be-4ab6-a6ad-05679e60f429
+
+
 Besides using the API, this project also supports **manual PDF to JPG conversion**
 using a **drag & drop method** on Windows.
 
@@ -65,15 +69,47 @@ This API is **cross-platform** and works on:
 - Node.js **v18+**
 - npm
 
+### How to call API
 ### Windows
-- No additional install required  
-- Uses Ghostscript portable binaries in `bin/`
+
+create cp .envwindows.example menjadi .env
+
+cmd
+
+Invoke-WebRequest -Method Post -Uri "http://localhost:3000/v1/convert/pdf-to-jpg" -Form @{ file = Get-Item "C:\path\file.pdf"; dpi="300"; quality="85" } -OutFile "output.zip"
+
+  
+or
+
+cmd
+curl -L -X POST "http://localhost:3000/v1/convert/pdf-to-jpg" -F "file=@C:\path\file.pdf" -o output.zip
+
 
 ### Linux / Ubuntu
 Install Ghostscript:
-```bash
+cmd
 sudo apt update
 sudo apt install -y ghostscript
+gs --version
+
+create cp .envubuntu.example menjadi .env
+
+cmd
+npm start
+
+Cara Memanggil API (Ubuntu/Linux)
+A) Minimal (convert PDF → download ZIP)
+Field multipart wajib bernama file
+
+cmd
+curl -L -X POST "http://localhost:3000/v1/convert/pdf-to-jpg" -F "file=@/path/ke/file.pdf" -o hasil.zip
+
+
+or
+
+cmd
+curl -L -X POST "http://localhost:3000/v1/convert/pdf-to-jpg" -F "file=@/path/ke/file.pdf" -OJ
+
 
 
 

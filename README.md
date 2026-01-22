@@ -70,8 +70,9 @@ This API is **cross-platform** and works on:
 - npm
 
 ### How to call API
+-----------
 ### Windows
-
+-----------
 create cp .envwindows.example to .env
 
 cmd
@@ -86,8 +87,9 @@ cmd
 -
 curl -L -X POST "http://localhost:3000/v1/convert/pdf-to-jpg" -F "file=@C:\path\file.pdf" -o output.zip
 
-
+------------------
 ### Linux / Ubuntu
+------------------
 Install Ghostscript:
 
 cmd

@@ -72,42 +72,52 @@ This API is **cross-platform** and works on:
 ### How to call API
 ### Windows
 
-create cp .envwindows.example menjadi .env
+create cp .envwindows.example to .env
 
 cmd
-
+-
 Invoke-WebRequest -Method Post -Uri "http://localhost:3000/v1/convert/pdf-to-jpg" -Form @{ file = Get-Item "C:\path\file.pdf"; dpi="300"; quality="85" } -OutFile "output.zip"
 
-  
+
 or
+-
 
 cmd
+-
 curl -L -X POST "http://localhost:3000/v1/convert/pdf-to-jpg" -F "file=@C:\path\file.pdf" -o output.zip
 
 
 ### Linux / Ubuntu
 Install Ghostscript:
+
 cmd
+-
 sudo apt update
+
 sudo apt install -y ghostscript
+
+
 gs --version
 
-create cp .envubuntu.example menjadi .env
+
+create cp .envubuntu.example to .env
 
 cmd
+-
+
 npm start
 
-Cara Memanggil API (Ubuntu/Linux)
-A) Minimal (convert PDF → download ZIP)
-Field multipart wajib bernama file
 
 cmd
+-
 curl -L -X POST "http://localhost:3000/v1/convert/pdf-to-jpg" -F "file=@/path/ke/file.pdf" -o hasil.zip
 
 
 or
+-
 
 cmd
+-
 curl -L -X POST "http://localhost:3000/v1/convert/pdf-to-jpg" -F "file=@/path/ke/file.pdf" -OJ
 
 

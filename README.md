@@ -73,53 +73,64 @@ This API is **cross-platform** and works on:
 -----------
 ### Windows
 -----------
+term
+-
+npm install
+
+npm start
+
+
 create cp .envwindows.example to .env
 
 cmd
 -
+
+create folder to convert location ex:
+
+cd /d "D:\Documents\contoh pdf"
+
 Invoke-WebRequest -Method Post -Uri "http://localhost:3000/v1/convert/pdf-to-jpg" -Form @{ file = Get-Item "C:\path\file.pdf"; dpi="300"; quality="85" } -OutFile "output.zip"
 
 
 or
 -
 
-cmd
--
+
 curl -L -X POST "http://localhost:3000/v1/convert/pdf-to-jpg" -F "file=@C:\path\file.pdf" -o output.zip
+
+
+https://github.com/user-attachments/assets/08382583-93cc-4ac2-a948-c1b72ffcfae1
+
+
 
 ------------------
 ### Linux / Ubuntu
 ------------------
 Install Ghostscript:
 
-cmd
+term
 -
 sudo apt update
 
 sudo apt install -y ghostscript
 
-
-gs --version
-
-
-create cp .envubuntu.example to .env
-
-cmd
--
+npm install
 
 npm start
 
-
 cmd
 -
-curl -L -X POST "http://localhost:3000/v1/convert/pdf-to-jpg" -F "file=@/path/ke/file.pdf" -o hasil.zip
+create folder to convert location ex:
 
+cd /d "D:\Documents\contoh pdf"
+
+create cp .envubuntu.example to .env
+
+curl -L -X POST "http://localhost:3000/v1/convert/pdf-to-jpg" -F "file=@/path/ke/file.pdf" -o hasil.zip
 
 or
 -
 
-cmd
--
 curl -L -X POST "http://localhost:3000/v1/convert/pdf-to-jpg" -F "file=@/path/ke/file.pdf" -OJ
 
 

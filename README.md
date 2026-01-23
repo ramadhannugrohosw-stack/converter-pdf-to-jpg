@@ -73,7 +73,7 @@ This API is **cross-platform** and works on:
 -----------
 ### Windows
 -----------
-create cp .envwindows.example to .env
+copy .envwindows.example to .env
 
 term
 -
@@ -108,7 +108,7 @@ https://github.com/user-attachments/assets/08382583-93cc-4ac2-a948-c1b72ffcfae1
 ------------------
 ### Linux / Ubuntu
 ------------------
-create cp .envubuntu.example to .env
+copy .envubuntu.example to .env
 
 
 Install Ghostscript:

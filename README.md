@@ -73,6 +73,8 @@ This API is **cross-platform** and works on:
 -----------
 ### Windows
 -----------
+create cp .envwindows.example to .env
+
 term
 -
 npm install
@@ -80,7 +82,7 @@ npm install
 npm start
 
 
-create cp .envwindows.example to .env
+
 
 cmd
 -
@@ -106,6 +108,9 @@ https://github.com/user-attachments/assets/08382583-93cc-4ac2-a948-c1b72ffcfae1
 ------------------
 ### Linux / Ubuntu
 ------------------
+create cp .envubuntu.example to .env
+
+
 Install Ghostscript:
 
 term
@@ -124,7 +129,6 @@ create folder to convert location ex:
 
 cd /d "D:\Documents\contoh pdf"
 
-create cp .envubuntu.example to .env
 
 curl -L -X POST "http://localhost:3000/v1/convert/pdf-to-jpg" -F "file=@/path/ke/file.pdf" -o hasil.zip
 

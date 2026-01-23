@@ -14,7 +14,7 @@ using a **drag & drop method** on Windows.
 ### How it works
 This repository provides batch files that allow you to:
 - Drag a PDF file
-- Drop it onto a `.bat` file
+- Drop it into a `.bat` file
 - Automatically convert all pages to JPG
 
 ### Steps

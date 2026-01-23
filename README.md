@@ -98,7 +98,7 @@ or
 -
 
 
-curl -L -X POST "http://localhost:3000/v1/convert/pdf-to-jpg" -F "file=@C:\path\file.pdf" -o output.zip
+curl -L -X POST "http://localhost:3000/v1/convert/pdf-to-jpg" -F "file=@C:\path\file.pdf" -OJ
 
 
 https://github.com/user-attachments/assets/08382583-93cc-4ac2-a948-c1b72ffcfae1

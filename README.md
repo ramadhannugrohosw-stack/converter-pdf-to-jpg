@@ -1,8 +1,69 @@
+# PDF to Image API (ZIP / 1Image Mode)
+
+API Node.js untuk mengubah file **PDF menjadi gambar (JPG)** menggunakan **Ghostscript**, dengan 3 mode output:
+
+- **auto (default)**  
+  - PDF 1 halaman → **1 file JPG**
+  - PDF > 1 halaman → **ZIP berisi JPG per halaman**
+- **zip**  
+  - Selalu output **ZIP**
+- **1image**  
+  - Semua halaman PDF digabung **vertikal ke bawah** → **1 file JPG panjang**
+
+---
+
+## 🚀 Fitur
+- Konversi PDF ke JPG per halaman
+- Gabung multi-page PDF jadi **1 gambar panjang**
+- Output ZIP otomatis
+- Support Windows & Ubuntu
+- Support parameter DPI, quality, page range
+- Aman untuk file path dengan spasi
+
+---
+
+```bash
+npm install
+npm install sharp
+```
+
+khusus UBUNTU/LINUX
+```bash
+sudo apt update
+sudo apt install ghostscript -y
+```
+
+```bash
+npm start
+```
+
+khusus lebih dari 1 halaman:
+jika ditambahkan -F "output=1image" maka akan jadi 1 file gambar gabungan secara vertikal. jika tidak maka akan dibautkan zip.
+jika hanya 1 halaman dalam pdf makan akan otomatis jadi 1 file gambar
+```bash
+curl.exe -X POST "http://localhost:3000/v1/convert/pdf-to-image" ^
+  -F "output=1image" ^
+  -F "file=@D:\Documents\contoh pdf\rekening.pdf;type=application/pdf" ^
+  -o "D:\Documents\contoh pdf\rekening-LONG.jpg
+```
+
+```bash
+curl -X POST "http://localhost:3000/v1/convert/pdf-to-image" \
+  -F "output=1image" \
+  -F "file=@\"/home/USER/Documents/contoh pdf/rekening.pdf\";type=application/pdf" \
+  -o "/home/USER/Documents/contoh pdf/rekening-LONG.jpg"
+```
+
+
 # PDF to JPG API (Ghostscript)
 
 ---
 
 ## Manual Usage (Windows – Drag & Drop)
+
+
+https://github.com/user-attachments/assets/72a80fe5-a9be-4ab6-a6ad-05679e60f429
+
 
 Besides using the API, this project also supports **manual PDF to JPG conversion**
 using a **drag & drop method** on Windows.
@@ -10,7 +71,7 @@ using a **drag & drop method** on Windows.
 ### How it works
 This repository provides batch files that allow you to:
 - Drag a PDF file
-- Drop it onto a `.bat` file
+- Drop it into a `.bat` file
 - Automatically convert all pages to JPG
 
 ### Steps
@@ -35,45 +96,3 @@ This repository provides batch files that allow you to:
 - Useful for quick local conversion or offline usage
 - Drag & drop (.bat) only works on Windows
 - Linux / Ubuntu users must use the API or CLI
-
----
-
-Simple REST API to convert uploaded **PDF files into JPG images (per page)**  
-and return the result as a **ZIP file**.
-
-This API is **cross-platform** and works on:
-- ✅ Windows (using portable Ghostscript in `bin/`)
-- ✅ Linux / Ubuntu (using system Ghostscript `gs`)
-
----
-
-## Features
-
-- Upload PDF via HTTP API
-- Convert each page to JPG
-- Return result as ZIP
-- Supports PDF with spaces in filename
-- Safe for concurrent requests (no overwrite)
-- Cross-platform (Windows & Ubuntu)
-- Ready to be used by **curl, Postman, n8n, or backend services**
-
----
-
-## Requirements
-
-### Common
-- Node.js **v18+**
-- npm
-
-### Windows
-- No additional install required  
-- Uses Ghostscript portable binaries in `bin/`
-
-### Linux / Ubuntu
-Install Ghostscript:
-```bash
-sudo apt update
-sudo apt install -y ghostscript
-
-
-

@@ -49,14 +49,17 @@ function runGhostscript({
       "-dSAFER",
       "-dBATCH",
       "-dNOPAUSE",
+      "-dPrinted",            // TAMBAH
+      "-dShowAnnots=true",    // TAMBAH
+      "-dRenderAnnotations=true", // TAMBAH (render annotation/form appearance lebih konsisten)
       "-sDEVICE=jpeg",
       `-sOutputFile=${outPattern}`,
       `-r${dpi}`,
       `-dFirstPage=${firstPage}`,
       `-dLastPage=${lastPage}`,
       `-dJPEGQ=${quality}`,
-      "-dGraphicsAlphaBits=2",
-      "-dTextAlphaBits=2",
+      "-dGraphicsAlphaBits=4",
+      "-dTextAlphaBits=4",
       "-dNumRenderingThreads=4",
       `-dBufferSpace=${memoryMB}000000`,
       `-dBandBufferSpace=${memoryMB}000000`,

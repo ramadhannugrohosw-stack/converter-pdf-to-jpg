@@ -204,9 +204,9 @@ app.post("/v1/convert/pdf-to-image", upload.single("file"), async (req, res) => 
   const outputMode = pickOutputMode(req); // auto | zip | 1image
 
   // Params with sane bounds
-  const dpi = Math.min(Math.max(parseInt(req.body.dpi || "150", 10), 72), 600);
-  const quality = Math.min(Math.max(parseInt(req.body.quality || "85", 10), 1), 100);
-  const jpegQuality = Math.min(Math.max(parseInt(req.body.jpegQuality || "85", 10), 1), 100);
+  const dpi = Math.min(Math.max(parseInt(req.body.dpi || "400", 10), 72), 600);
+  const quality = Math.min(Math.max(parseInt(req.body.quality || "99", 10), 1), 100);
+  const jpegQuality = Math.min(Math.max(parseInt(req.body.jpegQuality || "99", 10), 1), 100);
   const firstPage = Math.max(parseInt(req.body.firstPage || "1", 10), 1);
   const lastPage = Math.max(parseInt(req.body.lastPage || "9999", 10), firstPage);
   const memoryMB = Math.min(Math.max(parseInt(req.body.memoryMB || "300", 10), 64), 2048);
